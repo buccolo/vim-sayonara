@@ -44,14 +44,7 @@ endfunction
 function! s:prototype.handle_quit()
   execute 'silent bdelete!' self.target_buffer
   redraw!
-  if (get(g:, 'sayonara_confirm_quit'))
-    echo 'No active buffer remaining. Quit Vim? [y/n]: '
-    if nr2char(getchar()) != 'y'
-      redraw!
-      return 'return'
-    endif
-  endif
-  return 'quit!'
+  return 'return'
 endfunction
 
 " s:prototype.handle_window() {{{1
